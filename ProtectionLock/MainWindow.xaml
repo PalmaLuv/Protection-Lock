@@ -1,0 +1,111 @@
+﻿<Window x:Class="ProtectionLock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProtectionLock"
+        mc:Ignorable="d" Height="575" Width="955"
+        Title="Protection Lock"
+        WindowStyle="None" AllowsTransparency="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Background="#D9D9D9" MouseDown="MouseHeader" 
+                Panel.ZIndex="1">
+            <Grid>
+                <Label Content="🔓Protection Lock"
+                       FontWeight="Regular"
+                       Foreground="Gray"/>
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Button Height="20" Width="20"
+                            Click="ButtonMinimals">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                            </Style>
+                        </Button.Style>
+                        <Image Height="12" Width="12"
+                               VerticalAlignment="Bottom"
+                               Source="pack://application:,,,/img/collapse.png"/>
+                    </Button>
+                    <Button Height="20" Width="20"
+                            Click="ButtonMaximal">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                            </Style>
+                        </Button.Style>
+                        <Image Height="13" Width="13"
+                               Source="pack://application:,,,/img/expand.png"/>
+                    </Button>
+                    <Button Height="20" Width="20"
+                            Margin="0,0,6,0"
+                            Click="ButtonExit">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                            </Style>
+                        </Button.Style>
+                        <Image Height="12" Width="12"
+                               Source="pack://application:,,,/img/exit.png"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="5"
+                                  Opacity="0.55"/>
+            </Border.Effect>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border Background="#D9D9D9">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <RadioButton Grid.Row="0"
+                                 Style="{StaticResource MenuButtonTheme}">
+                        <Image Source="pack://application:,,,/img/panel.png"
+                               Height="18" Width="35" >
+                            <Image.Effect>
+                                <DropShadowEffect BlurRadius="6"
+                                                  ShadowDepth="2"
+                                                  Direction="270"
+                                                  Opacity="0.5"/>
+                            </Image.Effect>
+                        </Image>
+                    </RadioButton>
+
+                    <RadioButton Grid.Row="2"
+                                 Style="{StaticResource MenuButtonTheme}">
+                        <Image Source="pack://application:,,,/img/setting.png"
+                               Height="35" Width="32.0" Margin="0,0,0,9">
+                            <Image.Effect>
+                                <DropShadowEffect BlurRadius="6"
+                                                  ShadowDepth="2"
+                                                  Direction="270"
+                                                  Opacity="0.5"/>
+                            </Image.Effect>
+                        </Image>
+                    </RadioButton>
+                </Grid>
+                <!-- todo : RadioButton -->
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>
