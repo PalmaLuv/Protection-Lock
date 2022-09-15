@@ -1,6 +1,8 @@
 ﻿<Application x:Class="ProtectionLock.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel="clr-namespace:ProtectionLock.MWM.ViewModel"
+             xmlns:view="clr-namespace:ProtectionLock.MWM.View"
              xmlns:local="clr-namespace:ProtectionLock"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
@@ -8,6 +10,13 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="theme/MainButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate DataType="{x:Type viewModel:MainModel}">
+                <view:MainPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:SettingModel}">
+                <view:SettingPage/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
