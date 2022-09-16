@@ -4,6 +4,7 @@ namespace ProtectionLock.MWM.ViewModel
 {
     class MainWindowModel : ObservableObject
     {
+        // Model switching commands.
         public RelayCommand MainCommand { get; set; }
         public RelayCommand SettingCommand { get; set; }
 
@@ -12,7 +13,7 @@ namespace ProtectionLock.MWM.ViewModel
         public SettingModel SettingVM { get; set; }
 
         private object _currecntView;
-        public object CurrecntView
+        public object CurrentView
         {
             get { return _currecntView; }
             set 
@@ -21,15 +22,15 @@ namespace ProtectionLock.MWM.ViewModel
                 OnPropertyChanged();
             }
         }
-
+        // Switching between models.
         public MainWindowModel()
         {
             MainVM = new MainModel();
             SettingVM = new SettingModel();
-            CurrecntView = MainVM;
+            CurrentView = MainVM;
 
-            MainCommand = new RelayCommand(o => { CurrecntView = MainVM; });
-            SettingCommand = new RelayCommand(o => { CurrecntView = SettingVM; });
+            MainCommand = new RelayCommand(o => { CurrentView = MainVM; });
+            SettingCommand = new RelayCommand(o => { CurrentView = SettingVM; });
         }
     }
 }

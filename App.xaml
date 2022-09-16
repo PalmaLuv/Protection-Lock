@@ -10,7 +10,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="theme/MainButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            
             <DataTemplate DataType="{x:Type viewModel:MainModel}">
                 <view:MainPage/>
             </DataTemplate>

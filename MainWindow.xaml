@@ -8,16 +8,18 @@
         mc:Ignorable="d" Height="575" Width="955"
         Title="Protection Lock"
         WindowStyle="None" AllowsTransparency="True">
+
     <Window.DataContext>
         <viewModel:MainWindowModel/>
     </Window.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Background="#D9D9D9" MouseDown="MouseHeader" 
-                Panel.ZIndex="1">
+                Panel.ZIndex="2">
             <Grid>
                 <Label Content="🔓Protection Lock"
                        FontWeight="Regular"
@@ -73,7 +75,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Border Background="#D9D9D9">
+            <Border Background="#D9D9D9"
+                    Panel.ZIndex="1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="45"/>
@@ -82,7 +85,8 @@
                     </Grid.RowDefinitions>
 
                     <RadioButton Grid.Row="0"
-                                 Style="{StaticResource MenuButtonTheme}">
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding MainCommand}">
                         <Image Source="pack://application:,,,/img/panel.png"
                                Height="18" Width="35" >
                             <Image.Effect>
@@ -95,7 +99,8 @@
                     </RadioButton>
 
                     <RadioButton Grid.Row="2"
-                                 Style="{StaticResource MenuButtonTheme}">
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Command="{Binding SettingCommand}">
                         <Image Source="pack://application:,,,/img/setting.png"
                                Height="35" Width="32.0" Margin="0,0,0,9">
                             <Image.Effect>
@@ -110,6 +115,10 @@
                 
             </Border>
 
+            <Grid Grid.Column="1">
+                <ContentControl Content="{Binding CurrentView}"/>
+            </Grid>
+            
         </Grid>
     </Grid>
 </Window>

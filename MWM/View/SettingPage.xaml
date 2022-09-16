@@ -5,10 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProtectionLock.MWM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="900">
     <Grid>
         <Border Background="White">
-            <Label Content="test page setting"/>
+            <Label HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Content="This page is currently empty, as work is in progress."/>
         </Border>
     </Grid>
 </UserControl>

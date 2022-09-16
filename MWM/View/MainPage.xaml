@@ -5,10 +5,95 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProtectionLock.MWM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="900">
     <Grid>
         <Border Background="White">
-            <Label Content="test main page"/>
+
+            <Grid >
+                <Grid.RenderTransform>
+                    <RotateTransform Angle="35"/>
+                </Grid.RenderTransform>
+
+                <StackPanel Margin="-378,-72,378,72" 
+                            RenderTransformOrigin="0.5,0.5">
+                    <Border Width="500"
+                            Height="80"
+                            Margin="-65,0,65,0"
+                            CornerRadius="50">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#9214F5" Offset="0"/>
+                                <GradientStop Color="#E831E1" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>   
+                    </Border>
+
+                    <Border Width="500"
+                            Height="80"
+                            Margin="0,35,0,0"
+                            CornerRadius="50">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#22B7F6" Offset="0"/>
+                                <GradientStop Color="#F40E61" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <Border Width="500"
+                            Height="80"
+                            Margin="-135,35,130,0"
+                            CornerRadius="50">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#C52CEB" Offset="0"/>
+                                <GradientStop Color="#4F13FC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Margin="629,-140,-628.5,140" 
+                            RenderTransformOrigin="0.5,0.5">
+                    <Border Width="500"
+                            Height="80"
+                            Margin="-65,0,65,0"
+                            CornerRadius="50">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#EB177D" Offset="0"/>
+                                <GradientStop Color="#E831E1" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <Border Width="500"
+                            Height="80"
+                            Margin="0,35,0,0"
+                            CornerRadius="50">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#22B7F6" Offset="0"/>
+                                <GradientStop Color="#F40E61" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <Border Width="500"
+                            Height="80"
+                            Margin="-135,35,130,0"
+                            CornerRadius="50">
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#C52CEB" Offset="0"/>
+                                <GradientStop Color="#4F13FC" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+
         </Border>
     </Grid>
 </UserControl>
