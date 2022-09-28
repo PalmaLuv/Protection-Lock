@@ -27,39 +27,74 @@
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal">
                     <Button Height="20" Width="20"
-                            Click="ButtonMinimals">
+                            Click="ButtonMinimals"
+                            Cursor="Hand">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#CAC7C7"/>
+                                    </Trigger>
+                                </Style.Triggers>
                             </Style>
                         </Button.Style>
-                        <Image Height="12" Width="12"
-                               VerticalAlignment="Bottom"
-                               Source="pack://application:,,,/img/collapse.png"/>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <Image Height="12" Width="12"
+                                           Margin="0,0,0,-10"
+                                           Source="pack://application:,,,/img/collapse.png"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        
                     </Button>
                     <Button Height="20" Width="20"
-                            Click="ButtonMaximal">
+                            Click="ButtonMaximal"
+                            Cursor="Hand">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#CAC7C7"/>
+                                    </Trigger>
+                                </Style.Triggers>
                             </Style>
                         </Button.Style>
-                        <Image Height="13" Width="13"
-                               Source="pack://application:,,,/img/expand.png"/>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <Image Height="13" Width="13"
+                                           Source="pack://application:,,,/img/expand.png"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
                     <Button Height="20" Width="20"
                             Margin="0,0,6,0"
-                            Click="ButtonExit">
+                            Click="ButtonExit"
+                            Cursor="Hand">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#CAC7C7"/>
+                                    </Trigger>
+                                </Style.Triggers>
                             </Style>
                         </Button.Style>
-                        <Image Height="12" Width="12"
-                               Source="pack://application:,,,/img/exit.png"/>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <Image Height="12" Width="12"
+                                           Source="pack://application:,,,/img/exit.png"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        
                     </Button>
                 </StackPanel>
             </Grid>
@@ -86,7 +121,8 @@
 
                     <RadioButton Grid.Row="0"
                                  Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding MainCommand}">
+                                 Command="{Binding MainCommand}"
+                                 Cursor="Hand">
                         <Image Source="pack://application:,,,/img/panel.png"
                                Height="18" Width="35" >
                             <Image.Effect>
@@ -100,7 +136,8 @@
 
                     <RadioButton Grid.Row="2"
                                  Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding SettingCommand}">
+                                 Command="{Binding SettingCommand}"
+                                 Cursor="Hand">
                         <Image Source="pack://application:,,,/img/setting.png"
                                Height="35" Width="32.0" Margin="0,0,0,9">
                             <Image.Effect>

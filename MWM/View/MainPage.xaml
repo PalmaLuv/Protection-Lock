@@ -6,9 +6,8 @@
              xmlns:local="clr-namespace:ProtectionLock.MWM.View"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="900">
-    <Grid>
-        <Border Background="White">
-
+    <Grid Background="White">
+        <Border Background="Transparent">
             <Grid >
                 <Grid.RenderTransform>
                     <RotateTransform Angle="35"/>
@@ -25,7 +24,7 @@
                                 <GradientStop Color="#9214F5" Offset="0"/>
                                 <GradientStop Color="#E831E1" Offset="1"/>
                             </LinearGradientBrush>
-                        </Border.Background>   
+                        </Border.Background>
                     </Border>
 
                     <Border Width="500"
@@ -92,8 +91,57 @@
                     </Border>
                 </StackPanel>
             </Grid>
-
-
         </Border>
+
+        <!-- Markup for the location of the buttons in the future. -->
+        <Grid HorizontalAlignment="Center"
+              Margin="0,18,18,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <Button Height="120" Width="120"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#D9D9D9"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#CAC7C7"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="15">
+                                <Image Width="55" Height="55"
+                                   Source="pack://application:,,,/img/plus.png" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label Margin="0,-5,0,0"
+                       FontWeight="Regular"
+                       Content="New Application"
+                       HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </UserControl>
