@@ -93,55 +93,49 @@
             </Grid>
         </Border>
 
-        <!-- Markup for the location of the buttons in the future. -->
-        <Grid HorizontalAlignment="Center"
-              Margin="0,18,18,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="140"/>
-                <ColumnDefinition Width="140"/>
-            </Grid.ColumnDefinitions>
+        <ItemsControl ItemsSource="{Binding Buttons}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <!-- Markup for the location of the buttons in the future. -->
+                    <Grid HorizontalAlignment="Center"
+                          Margin="0,18,18,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="140"/>
+                        </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="140"/>
-                <RowDefinition Height="140"/>
-                <RowDefinition Height="140"/>
-                <RowDefinition Height="140"/>
-            </Grid.RowDefinitions>
-
-            <StackPanel>
-                <Button Height="120" Width="120"
-                        Cursor="Hand">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background" Value="#D9D9D9"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#CAC7C7"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                                    CornerRadius="15">
-                                <Image Width="55" Height="55"
-                                   Source="pack://application:,,,/img/plus.png" />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Label Margin="0,-5,0,0"
-                       FontWeight="Regular"
-                       Content="New Application"
-                       HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="140"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="Grid.Row" Value="{Binding Row}"/>
+                    <Setter Property="Grid.Column" Value="{Binding Column}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Button  Command="{Binding Command}" 
+                                 Style="{StaticResource CustomButton}"/>
+                        <Label Content="{Binding Content}"
+                               Margin="0,-5,0,0"
+                               FontWeight="Regular"
+                               HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
 
     </Grid>
 </UserControl>

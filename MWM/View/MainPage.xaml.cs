@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProtectionLock.MWM.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,9 +21,14 @@ namespace ProtectionLock.MWM.View
     /// </summary>
     public partial class MainPage : UserControl
     {
+        public ObservableCollection<ButtonViewModel> Buttons { get; set; } = new ObservableCollection<ButtonViewModel>();
+
         public MainPage()
         {
             InitializeComponent();
+            DataContext = this;
+
+            Buttons.Add(new ButtonViewModel("test button", 0, 0));
         }
     }
 }
