@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace ProtectionLock.MWM.ViewModel
 {
     public class ButtonViewModel
     {
+        //Settings the button. 
         public string Content { get; set; }
         public int Row        { get; set; }
         public int Column     { get; set; }
 
+        //Command to be executed by the button.
         public ICommand Command { get; set; }
 
+        //Accepting settings.
         public ButtonViewModel(string Content, int Row = 0, int Column = 0, ICommand Command = null)
         {
             this.Content = Content;

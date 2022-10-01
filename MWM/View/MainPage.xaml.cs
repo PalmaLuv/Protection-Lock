@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace ProtectionLock.MWM.View
 {
-    /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
-    /// </summary>
     public partial class MainPage : UserControl
     {
         public ObservableCollection<ButtonViewModel> Buttons { get; set; } = new ObservableCollection<ButtonViewModel>();

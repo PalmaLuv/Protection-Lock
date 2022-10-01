@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace ProtectionLock.MWM.View
 {
-    /// <summary>
-    /// Логика взаимодействия для SettingPage.xaml
-    /// </summary>
     public partial class SettingPage : UserControl
     {
         public SettingPage()
