@@ -1,4 +1,4 @@
-﻿using ProtectionLock.MWM.ViewModel;
+﻿using ProtectionLock.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace ProtectionLock.MWM.View
+namespace ProtectionLock.MVVM.View
 {
     public partial class MainPage : UserControl
     {
@@ -23,9 +23,8 @@ namespace ProtectionLock.MWM.View
         public MainPage()
         {
             InitializeComponent();
-            DataContext = this;
-
-            Buttons.Add(new ButtonViewModel("test button", 0, 0));
+            //DataContext = this;
+            //Buttons.Add(new ButtonViewModel("test button", 0, 0));
         }
     }
 }

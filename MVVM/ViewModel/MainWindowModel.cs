@@ -1,6 +1,6 @@
 ﻿using ProtectionLock.Core;
 
-namespace ProtectionLock.MWM.ViewModel
+namespace ProtectionLock.MVVM.ViewModel
 {
     class MainWindowModel : ObservableObject
     {

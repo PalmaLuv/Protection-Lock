@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,14 +11,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProtectionLock.MWM.View
+
+namespace ProtectionLock.MVVM.View
 {
-    /// <summary>
-    /// Логика взаимодействия для CustomButton.xaml
-    /// </summary>
-    public partial class CustomButton : UserControl
+    public partial class SettingPage : UserControl
     {
-        public CustomButton()
+        public SettingPage()
         {
             InitializeComponent();
         }

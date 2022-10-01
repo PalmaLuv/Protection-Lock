@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace ProtectionLock.MWM.ViewModel
+namespace ProtectionLock.MVVM.ViewModel
 {
     public class ButtonViewModel
     {
