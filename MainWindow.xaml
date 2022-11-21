@@ -9,6 +9,11 @@
         Title="Protection Lock"
         WindowStyle="None" AllowsTransparency="True">
 
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="NewApplication" 
+                        CanExecute="CommandBinding_CanExecute"
+    </Window.CommandBindings>-->
+    
     <Window.DataContext>
         <viewModel:MainWindowModel/>
     </Window.DataContext>

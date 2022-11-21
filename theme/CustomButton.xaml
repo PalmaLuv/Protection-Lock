@@ -13,7 +13,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}"
                                 CornerRadius="15">
-                            <Image Width="55" Height="55" Source="{}"/>
+                            <Image Width="55" Height="55" Source="{Binding Path=PathIco}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

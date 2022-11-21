@@ -126,7 +126,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Button  Command="{Binding Command}" 
+                        <Button  Command="{Binding Command}"
                                  Style="{StaticResource CustomButton}"/>
                         <Label Content="{Binding Content}"
                                Margin="0,-5,0,0"
