@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,33 +22,27 @@ using static ProtectionLock.Methods.ControlList;
 
 namespace ProtectionLock.MVVM.View
 {
+
     public partial class MainPage : UserControl
     {
-        public ObservableCollection<ButtonViewModel> Buttons { get; set; } = new ObservableCollection<ButtonViewModel>();
+        public ObservableCollection<ButtonViewModel> Buttons { get; set; }
 
-        public void GetButtonList(ButtonList buttonlist)
-        {
-            while(buttonlist != null)
-            {
-                Buttons.Add(buttonlist.buttons);
-                buttonlist = buttonlist.prev;
-            }
-        }
+        
 
         public MainPage()
         {
             InitializeComponent();
+            ControlList dll = new ControlList();
+            CommandButton cb = new CommandButton();
+            
+            Buttons = dll.Buttons;
             DataContext = this;
 
-            ControlList dll = new ControlList();
-            CommandButton cb = new CommandButton(); 
+            dll.addItemList("Add Application", cb.CommandNewButton, "pack://application:,,,/img/plus.png");
+            dll.addItemList("new button1", cb.CommandEditApplication);
 
-            dll.addItemList("Add Application", 0, 0, cb.CommandNewButton, "pack://application:,,,/img/plus.png");
-            dll.addItemList("new button1", 0, 1, cb.CommandEditApplication);
-
-            GetButtonList(dll.bl);
+            dll.GetButtonList(dll.bl);
         }
-
 
         /// <summary>
         /// Commands for buttons that are created by the command.
@@ -82,7 +78,7 @@ namespace ProtectionLock.MVVM.View
             {
                 new WindowGetInfo().ShowDialog();
             }
-            
+
             private void EditApplication()
             {
                 MessageBox.Show("It's empty for now");

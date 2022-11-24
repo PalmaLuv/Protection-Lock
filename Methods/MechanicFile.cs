@@ -8,6 +8,8 @@ using System.Data.SQLite;
 using ProtectionLock.MVVM.ViewModel;
 using ProtectionLock.MVVM.View;
 using System.Windows.Input;
+using System.Reflection;
+using static ProtectionLock.MVVM.View.MainPage;
 
 namespace ProtectionLock.Methods
 {
@@ -34,20 +36,44 @@ namespace ProtectionLock.Methods
         public ButtonList bl;
         public MainPage mp;
 
+        public ObservableCollection<ButtonViewModel> Buttons { get; set; } = new ObservableCollection<ButtonViewModel>();
+
+        //Location of [Auto Fill] Buttons.
+        private int row     =   0;
+        private int column  =   0;
+
         //Recording to list button parameter.
-        public void addItemList(string content, int row, int column, ICommand command, string path = null)
+        public void addItemList(string content, ICommand command, string path = null)
         {
+            if (column == 6)
+            {
+                column = 0;
+                row++;
+            }
             ButtonList newItem = new ButtonList(new ButtonViewModel(content, row, column, command, path));
             newItem.prev = bl;
             newItem.next = null;
             if (bl != null) bl.next = newItem;
             bl = newItem;
+            column++;
         }
 
+        //Button update.
+        public void GetButtonList(ButtonList buttonlist)
+        {
+            Buttons.Clear();
+            while (buttonlist != null)
+            {
+                Buttons.Add(buttonlist.buttons);
+                buttonlist = buttonlist.prev;
+            }
+        }
     }
 
-    public class MechanicFile
+    public static class MechanicFile
     {
+        //todo : Create a form close check.
+        //todo : Create update buttons when closing the form "ok button".
         //todo : working method with SQLite.
     }
 }

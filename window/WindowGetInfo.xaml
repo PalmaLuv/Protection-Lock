@@ -18,7 +18,8 @@
             <Grid>
                 <Label Content="🔓Protection Lock"
                        FontWeight="Regular"
-                       Foreground="Gray"/>
+                       Foreground="Gray"
+                       FontFamily="Inter"/>
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal">
                     
@@ -53,5 +54,145 @@
                                   Opacity="0.55"/>
             </Border.Effect>
         </Border>
+
+        <Grid Grid.Row="1">
+            <StackPanel HorizontalAlignment="Left" 
+                        Margin="15,15,0,0">
+                <Label Content="Program(-s) name : "
+                       FontWeight="Regular" FontFamily="Inter"/>
+                <TextBox Width="300" Height="22" HorizontalAlignment="Left"
+                         Margin="10,0,0,0"
+                         x:Name="ProgramsName">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Background" Value="#EAEAEA"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TextBox">
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="7">
+                                            <TextBox Background="Transparent" HorizontalAlignment="Center"
+                                                     VerticalAlignment="Center"
+                                                     BorderThickness="{TemplateBinding BorderThickness}"
+                                                     Width="{TemplateBinding Width}"
+                                                     MaxWidth="{TemplateBinding Width}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect BlurRadius="16"
+                                                          ShadowDepth="4"
+                                                          Direction="240"
+                                                          Opacity="0.3"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <Label Content="Location : "
+                       FontWeight="Regular" FontFamily="Inter"/>
+                <StackPanel HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <TextBox Width="400" Height="22" HorizontalAlignment="Left"
+                             Margin="10,0,0,0" x:Name="LocationTextBox">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Background" Value="#EAEAEA"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TextBox">
+                                            <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="7">
+                                                <TextBox Background="Transparent" HorizontalAlignment="Center"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="{TemplateBinding BorderThickness}"
+                                                         Width="{TemplateBinding Width}"
+                                                         MaxWidth="{TemplateBinding Width}"
+                                                         Text="{TemplateBinding Text}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="16"
+                                                          ShadowDepth="4"
+                                                          Direction="240"
+                                                          Opacity="0.3"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Button Margin="10,0,0,0" Click="ProgramOpening">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Width" Value="25"/>
+                                <Setter Property="Height" Value="25"/>
+                                <Setter Property="Opacity" Value="1"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Image Source="pack://application:,,,/img/noneImage.png"/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Button HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Grid.Row="1" Width="80" Height="30"
+                Margin="0,0,20,20"
+                Cursor="Hand"
+                Click="AddApplication">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#CAC7C7"/>
+                    <Setter Property="Foreground" Value="#3D3D3D"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="7" Background="{TemplateBinding Background}">
+                                    <Label Content="Ok" HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontWeight="Bold"
+                                           FontFamily="Inter"
+                                           FontSize="15"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="16"
+                                                          ShadowDepth="4"
+                                                          Direction="240"
+                                                          Opacity="0.3"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#EAEAEA"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>

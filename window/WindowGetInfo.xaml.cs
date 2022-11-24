@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtectionLock.Methods;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static ProtectionLock.MVVM.View.MainPage;
 
 namespace ProtectionLock.window
 {
@@ -25,6 +27,33 @@ namespace ProtectionLock.window
         private void MouseHeader(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed) DragMove();
+        }
+
+        private void ProgramOpening(object sender, RoutedEventArgs e)
+        {
+            string path = ""; 
+
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.Filter = "Text documents (*.txt)|*.txt|All files (*.*)|*.*";
+            dialog.FilterIndex = 2;
+
+            Nullable<bool> result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                path = dialog.FileName;
+            }
+            LocationTextBox.Text = path;
+        }
+
+        private void AddApplication(object sender, RoutedEventArgs e)
+        {
+            ControlList dll = new ControlList();
+            CommandButton cb = new CommandButton();
+
+            dll.addItemList(ProgramsName.Text, cb.CommandEditApplication);
+            dll.GetButtonList(dll.bl);
+            this.Close();
         }
     }
 }

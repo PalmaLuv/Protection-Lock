@@ -1,4 +1,5 @@
 ﻿using ProtectionLock.Core;
+using ProtectionLock.MVVM.View;
 
 namespace ProtectionLock.MVVM.ViewModel
 {
@@ -29,8 +30,8 @@ namespace ProtectionLock.MVVM.ViewModel
             SettingVM = new SettingModel();
             CurrentView = MainVM;
 
-            MainCommand = new RelayCommand(o => { CurrentView = MainVM; });
-            SettingCommand = new RelayCommand(o => { CurrentView = SettingVM; });
+            MainCommand = new RelayCommand(o => { CurrentView = MainVM;});
+            SettingCommand = new RelayCommand(o => { CurrentView = SettingVM;});
         }
     }
 }

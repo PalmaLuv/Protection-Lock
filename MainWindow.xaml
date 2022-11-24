@@ -28,55 +28,11 @@
             <Grid>
                 <Label Content="🔓Protection Lock"
                        FontWeight="Regular"
-                       Foreground="Gray"/>
+                       Foreground="Gray"
+                       FontFamily="Inter"/>
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal">
-                    <Button Height="20" Width="20"
-                            Click="ButtonMinimals"
-                            Cursor="Hand">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#CAC7C7"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}">
-                                    <Image Height="12" Width="12"
-                                           Margin="0,0,0,-10"
-                                           Source="pack://application:,,,/img/collapse.png"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                        
-                    </Button>
-                    <Button Height="20" Width="20"
-                            Click="ButtonMaximal"
-                            Cursor="Hand">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#CAC7C7"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}">
-                                    <Image Height="13" Width="13"
-                                           Source="pack://application:,,,/img/expand.png"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                    
                     <Button Height="20" Width="20"
                             Margin="0,0,6,0"
                             Click="ButtonExit"

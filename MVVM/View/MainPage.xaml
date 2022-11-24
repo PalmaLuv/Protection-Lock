@@ -131,7 +131,8 @@
                         <Label Content="{Binding Content}"
                                Margin="0,-5,0,0"
                                FontWeight="Regular"
-                               HorizontalAlignment="Center"/>
+                               HorizontalAlignment="Center"
+                               FontFamily="Inter"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
